@@ -54,4 +54,12 @@ public class Product {
 		return iva;
 	}
 	
+	public Double getFullPrice() {
+		double ivaPrice = (price * iva) /100;
+		double fullPrice = price + ivaPrice;
+		
+		return fullPrice;
+			
+	}
+	
 }

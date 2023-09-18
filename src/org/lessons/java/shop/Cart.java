@@ -33,7 +33,7 @@ public class Cart {
 		String memoryString = sc.nextLine();
 		int memory = Integer.parseInt(memoryString);
 		Smartphone smartphone = new Smartphone (code, name, brand, price, iva, memory, IMEI);
-		
+		System.out.println(smartphone.getFullPrice());
 		
 		break;
 	}
@@ -47,17 +47,25 @@ public class Cart {
 		boolean isSmart = Boolean.parseBoolean(isSmartString);
 		
 		Television television = new Television (code, name, brand, price, iva, dimensions, isSmart);
-		System.out.println(television.getIsSmart());
 		
 		break;
 	}
 	case "3": {
 	
+		System.out.println("Write the color");
+		String color = sc.nextLine();
+		System.out.println("Are They Wireless or Cablete?");
+		String wirelessOrCableteString = sc.nextLine();
+		boolean wirelessOrCablete;
+		if(wirelessOrCableteString.equals("wireless")) {
+			wirelessOrCablete = true;
+		} else {
+			wirelessOrCablete = false;
+		}
+		
+		Headphone headphone = new Headphone(code, name, brand, price, iva, color, wirelessOrCablete);
 	break;
 	}
-
-	
-	
 	
 	}
 } }
