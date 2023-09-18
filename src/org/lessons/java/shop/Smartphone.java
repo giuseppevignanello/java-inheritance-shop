@@ -35,5 +35,18 @@ public class Smartphone extends Product{
 		" IMEI: " + this.IMEI +
 		" Memory: " + memory + "GB";
 	}
+	
+	public  Double getDiscountedPrice() {
+		if(memory > 32) {
+			int discount = 5;
+			double discounted = (getFullPrice() * discount) /100;
+			double discountedPrice = getFullPrice() - discounted;
+			return discountedPrice;
+		} else {
+			return super.getDiscountedPrice();
+		}
+		
+		
+	}
 
 }

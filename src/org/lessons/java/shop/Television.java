@@ -40,5 +40,20 @@ public class Television extends Product{
 		" Dimensions: " + this.getDimensions() + " inches" +
 		" Is Smart: " + isSmart;
 	}
+	
+	@Override 
+	
+	public  Double getDiscountedPrice() {
+		if(!isSmart) {
+			int discount = 10;
+			double discounted = (getFullPrice() * discount) /100;
+			double discountedPrice = getFullPrice() - discounted;
+			return discountedPrice;
+		} else {
+			return super.getDiscountedPrice();
+		}
+		
+		
+	}
 
 }

@@ -1,5 +1,6 @@
 package org.lessons.java.shop;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Cart {
@@ -8,9 +9,20 @@ public class Cart {
 	
 	System.out.println("Add a new item to the cart!");
 	
-	boolean stop = false; 
+	boolean stop = false;  
+	boolean fidelity = false;
+	
+	String[] cart = new String[10];
+	
+	System.out.println("Do you have fidelity card? YES or NO");
+	String fidelityString = sc.nextLine();
+	int i = 0;
+	if(fidelityString.equals("YES")) {
+		fidelity = true;
+	}
 	
 	while(!stop) {
+	
 	
 	System.out.println("Do you want to buy a Smartphone [1], a TV [2] or a pair of headphones [3]?");
 	
@@ -39,7 +51,8 @@ public class Cart {
 		String memoryString = sc.nextLine();
 		int memory = Integer.parseInt(memoryString);
 		Smartphone smartphone = new Smartphone (code, name, brand, price, iva, memory, IMEI);
-		System.out.println(smartphone.toString());
+		cart[i] = smartphone.toString();
+		i++;
 		break;
 	}
 	//television case
@@ -51,10 +64,11 @@ public class Cart {
 		System.out.println("Is it a smart TV? (Type 'true' for YES, 'false' for NO");
 		String isSmartString = sc.nextLine();
 		boolean isSmart = Boolean.parseBoolean(isSmartString);
-		
 		Television television = new Television (code, name, brand, price, iva, dimensions, isSmart);
-		System.out.println(television.toString());
+		cart[i] = television.toString();
+		i++;
 		break;
+		
 	}
 	
 	//headphone case
@@ -72,7 +86,8 @@ public class Cart {
 		}
 		
 		Headphone headphone = new Headphone(code, name, brand, price, iva, color, wirelessOrCablete);
-		System.out.println(headphone.toString());
+		cart[i] = headphone.toString();
+		i++;
 	break;
 	}
 	
@@ -83,9 +98,15 @@ public class Cart {
 	String response = sc.nextLine();
 	if(response.equals("no")) {
 		stop = true;
+		System.out.println("Your cart: ");
+		for (int j = 0; j < cart.length; j++) {
+			System.out.println(cart[j]);
+	
 	}
 	
 } 
 	System.out.println("finished");
 	}
-}
+	
+
+	}}

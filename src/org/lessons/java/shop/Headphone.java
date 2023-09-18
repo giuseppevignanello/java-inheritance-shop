@@ -33,5 +33,20 @@ public class Headphone extends Product {
 		"Color: " + this.color + 
 		"Wireless or Cabled " + (isWirelessOrCabladed ? " Wireless " : "Cabled");
 	}
+	
+	
+	@Override
+	public  Double getDiscountedPrice() {
+		if(!isWirelessOrCabladed) {
+			int discount = 5;
+			double discounted = (getFullPrice() * discount) /100;
+			double discountedPrice = getFullPrice() - discounted;
+			return discountedPrice;
+		} else {
+			return super.getDiscountedPrice();
+		}
+		
+		
+	}
 
 }

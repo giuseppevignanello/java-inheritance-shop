@@ -62,7 +62,16 @@ public class Product {
 			
 	}
 	
-	@Override
+	public Double getDiscountedPrice() {
+		int discount = 2; 
+		
+		double discounted = (getFullPrice() * discount) /100;
+		double discountedPrice = getFullPrice() - discounted;
+		
+		return discountedPrice;
+	}
+	
+
 	public String toString() {
 		return	"Code: " + code + 
 				" Name: " + name + 
@@ -71,5 +80,9 @@ public class Product {
 				" Iva: " + iva + 
 				" Full Price: $" + getFullPrice();
 	} 
+	
+
+
+	
 	
 }
