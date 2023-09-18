@@ -7,6 +7,10 @@ public class Cart {
 	Scanner sc = new Scanner (System.in);
 	
 	System.out.println("Add a new item to the cart!");
+	boolean stop = false; 
+	
+	while(!stop) {
+	
 	System.out.println("Do you want to buy a Smartphone [1], a TV [2] or a pair of headphones [3]?");
 	
 	String userItemChoice = sc.nextLine();
@@ -33,7 +37,6 @@ public class Cart {
 		String memoryString = sc.nextLine();
 		int memory = Integer.parseInt(memoryString);
 		Smartphone smartphone = new Smartphone (code, name, brand, price, iva, memory, IMEI);
-		System.out.println(smartphone.getFullPrice());
 		
 		break;
 	}
@@ -68,4 +71,14 @@ public class Cart {
 	}
 	
 	}
-} }
+	
+	System.out.println("Do you want to continue? Type 'no' to stop. Any other word to continue");
+	String response = sc.nextLine();
+	if(response.equals("no")) {
+		stop = true;
+	}
+	
+} 
+	System.out.println("finished");
+	}
+}
