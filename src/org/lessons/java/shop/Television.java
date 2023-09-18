@@ -10,6 +10,7 @@ public class Television extends Product{
 		super(code, name, brand, price, iva);
 		
 		setIsSmart(isSmart);
+		setDimensions(dimensions);
 		
 	}
 
@@ -31,6 +32,13 @@ public class Television extends Product{
 
 	public void setDimensions(int dimensions) {
 		this.dimensions = dimensions;
+	}
+	
+	@Override 
+	public String toString() {
+		return super.toString() + 
+		" Dimensions: " + this.getDimensions() + " inches" +
+		" Is Smart: " + isSmart;
 	}
 
 }

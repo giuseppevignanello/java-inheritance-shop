@@ -9,6 +9,7 @@ public class Smartphone extends Product{
 		super(code, name, brand, price, iva);
 		
 		setMemory(memory);
+		setIMEI(IMEI);
 	}
 	
 	public int getMemory() {
@@ -24,8 +25,15 @@ public class Smartphone extends Product{
 		return IMEI;
 	}
 
-	public void setIMEI(String iMEI) {
-		this.IMEI = iMEI;
+	public void setIMEI(String IMEI) {
+		this.IMEI = IMEI;
+	}
+	
+	@Override 
+	public String toString() {
+		return super.toString() +
+		" IMEI: " + this.IMEI +
+		" Memory: " + memory + "GB";
 	}
 
 }

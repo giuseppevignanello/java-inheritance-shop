@@ -7,6 +7,7 @@ public class Cart {
 	Scanner sc = new Scanner (System.in);
 	
 	System.out.println("Add a new item to the cart!");
+	
 	boolean stop = false; 
 	
 	while(!stop) {
@@ -30,6 +31,7 @@ public class Cart {
 	
 	
 	switch (userItemChoice) {
+	//Smartphone case
 	case "1": {
 		System.out.println("Write IMEI code");
 		String IMEI = sc.nextLine();
@@ -37,9 +39,10 @@ public class Cart {
 		String memoryString = sc.nextLine();
 		int memory = Integer.parseInt(memoryString);
 		Smartphone smartphone = new Smartphone (code, name, brand, price, iva, memory, IMEI);
-		
+		System.out.println(smartphone.toString());
 		break;
 	}
+	//television case
 	case "2": {
 		
 		System.out.println("Write the dimensions");
@@ -50,9 +53,11 @@ public class Cart {
 		boolean isSmart = Boolean.parseBoolean(isSmartString);
 		
 		Television television = new Television (code, name, brand, price, iva, dimensions, isSmart);
-		
+		System.out.println(television.toString());
 		break;
 	}
+	
+	//headphone case
 	case "3": {
 	
 		System.out.println("Write the color");
@@ -67,11 +72,13 @@ public class Cart {
 		}
 		
 		Headphone headphone = new Headphone(code, name, brand, price, iva, color, wirelessOrCablete);
+		System.out.println(headphone.toString());
 	break;
 	}
 	
 	}
 	
+	//continue or stop option
 	System.out.println("Do you want to continue? Type 'no' to stop. Any other word to continue");
 	String response = sc.nextLine();
 	if(response.equals("no")) {
