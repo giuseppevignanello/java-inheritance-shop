@@ -9,6 +9,7 @@ public class Product {
 	private int iva;
 	
 	public Product(String code, String name, String brand, Double price, int iva ) {
+		this.code = code;
 		setName(name);
 		setBrand(brand);
 		setPrice(price); 
